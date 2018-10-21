@@ -1,5 +1,6 @@
 spring:
   jackson:
+    #这里的设置方式是工程全局的，类中使用注解的设置方式仅仅针对当前类
     date-format: yyyy-MM-dd #如果使用字符串型标识，用这行设计格式
     time-zone: GMT+8
     serialization:
