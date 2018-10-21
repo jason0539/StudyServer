@@ -1,11 +1,15 @@
 package com.daoming.tvseries;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 public class TvSeriesDto {
     private int id;
     private String name;
     private int seasonCount;
+    //    @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd")//日期格式化：yyyy-MM-dd
+    //    @JsonFormat(shape = JsonFormat.Shape.NUMBER)//日期格式化：时间戳timestamp
     private Date originRelease;
 
     public TvSeriesDto() {
