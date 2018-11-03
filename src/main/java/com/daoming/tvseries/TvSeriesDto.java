@@ -54,4 +54,14 @@ public class TvSeriesDto {
     public void setOriginRelease(Date originRelease) {
         this.originRelease = originRelease;
     }
+
+    @Override
+    public String toString() {
+        return "TvSeriesDto{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", seasonCount=" + seasonCount +
+                ", originRelease=" + originRelease +
+                '}';
+    }
 }

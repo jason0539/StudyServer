@@ -3,10 +3,7 @@ package com.daoming.tvseries;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
 
@@ -22,6 +19,7 @@ public class TvSeriesController {
 //        return map;
 //    }
 
+    //curl http://127.0.0.1:8080/tvseries/
     @GetMapping
     public List<TvSeriesDto> getAll() {
         if (log.isDebugEnabled()) {
@@ -33,6 +31,7 @@ public class TvSeriesController {
         return list;
     }
 
+    //curl http://127.0.0.1:8080/tvseries/101
     @GetMapping("/{id}")
     public TvSeriesDto getOne(@PathVariable int id) {
         if (log.isDebugEnabled()) {
@@ -45,6 +44,17 @@ public class TvSeriesController {
         } else {
             throw new ResourceNotFoundException();
         }
+    }
+
+
+    //curl -H "Content-Type:application/json" -X POST --data '{"name":"西部世界","seasonCount":1,"originalRelease":"2016-10-2"}' http://127.0.0.1:8080/tvseries
+    @PostMapping
+    public TvSeriesDto insertOne(@RequestBody TvSeriesDto tvSeriesDto) {
+        if (log.isDebugEnabled()) {
+            log.debug("insertOne " + tvSeriesDto + "，这里应该写插入到数据库的代码");
+        }
+        tvSeriesDto.setId(9999);
+        return tvSeriesDto;
     }
 
     private TvSeriesDto createPoi() {
