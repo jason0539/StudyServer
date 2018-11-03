@@ -57,6 +57,18 @@ public class TvSeriesController {
         return tvSeriesDto;
     }
 
+    @PutMapping("/{id}")
+    public TvSeriesDto updateOne(@PathVariable int id, @RequestBody TvSeriesDto tvSeriesDto) {
+        if (log.isDebugEnabled()) {
+            log.debug("updateOne " + id + ",这里应该写更新到数据库的代码");
+        }
+        if (id == 101 || id == 102) {
+            return createWestWorld();
+        } else {
+            throw new ResourceNotFoundException();
+        }
+    }
+
     private TvSeriesDto createPoi() {
         Calendar calendar = Calendar.getInstance();
         calendar.set(2016, Calendar.OCTOBER, 2, 0, 0);
