@@ -5,6 +5,7 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.*;
 
 @RestController
@@ -67,6 +68,25 @@ public class TvSeriesController {
         } else {
             throw new ResourceNotFoundException();
         }
+    }
+
+    //curl -X DELETE http://127.0.0.1:8080/tvseries/101\?delete_reason\=duplicated
+    @DeleteMapping("/{id}")
+    public Map<String, String> deleteOne(@PathVariable int id, HttpServletRequest request,
+                                         @RequestParam(value = "delete_reason", required = false) String deleteReason) {
+        if (log.isDebugEnabled()) {
+            log.debug("deleteOne id = " + id);
+        }
+        Map result = new HashMap();
+        if (id == 101) {
+            result.put("message", "#101被" + request.getRemoteAddr() + "删除，原因：" + deleteReason);
+        } else if (id == 102) {
+            //AccessDeniedException更合适
+            throw new RuntimeException("#102不能被删除");
+        } else {
+            throw new ResourceNotFoundException();
+        }
+        return result;
     }
 
     private TvSeriesDto createPoi() {
