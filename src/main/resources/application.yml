@@ -5,3 +5,10 @@ spring:
     time-zone: GMT+8
     serialization:
       write-dates-as-timestamps: false #使用数值timestapmp表示日期
+
+logging:
+  file: target/app.log
+  level:
+    ROOT: WARN
+    #发布时修改这里的日志界别控制日志输出
+    com.daoming: DEBUG
