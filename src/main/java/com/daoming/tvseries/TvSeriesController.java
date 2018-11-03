@@ -23,14 +23,23 @@ public class TvSeriesController {
     @GetMapping
     public List<TvSeriesDto> getAll() {
         List<TvSeriesDto> list = new ArrayList<>();
-        Calendar calendar = Calendar.getInstance();
-        calendar.set(2016, Calendar.OCTOBER, 2, 0, 0);
-        list.add(new TvSeriesDto(1, "WestWorld", 1, calendar.getTime()));
-        calendar.set(2011, Calendar.SEPTEMBER, 22, 0, 0);
-        list.add(new TvSeriesDto(2, "WestWorld", 1, calendar.getTime()));
+        list.add(createPoi());
+        list.add(createWestWorld());
         if (log.isDebugEnabled()) {
             log.debug("TvSeriesController.getAll被调用了");
         }
         return list;
+    }
+
+    private TvSeriesDto createPoi() {
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(2016, Calendar.OCTOBER, 2, 0, 0);
+        return new TvSeriesDto(101, "Person of interest", 1, calendar.getTime());
+    }
+
+    private TvSeriesDto createWestWorld() {
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(2016, Calendar.OCTOBER, 2, 0, 0);
+        return new TvSeriesDto(102, "WestWorld", 1, calendar.getTime());
     }
 }
