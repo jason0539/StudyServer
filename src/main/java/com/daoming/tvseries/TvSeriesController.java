@@ -2,10 +2,14 @@ package com.daoming.tvseries;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.FileOutputStream;
 import java.util.*;
 
 @RestController
@@ -56,6 +60,17 @@ public class TvSeriesController {
         }
         tvSeriesDto.setId(9999);
         return tvSeriesDto;
+    }
+
+    //curl -F "photo=@your_photo_path.jpg" http://127.0.0.1:8080/tvseries/102/photos
+    @PostMapping(value = "/{id}/photos", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public void addPhoto(@PathVariable int id, @RequestParam("photo") MultipartFile imgFile) throws Exception {
+        if (log.isDebugEnabled()) {
+            log.debug("addPhoto " + id + ",文件：" + imgFile.getOriginalFilename());
+        }
+        FileOutputStream fos = new FileOutputStream("target/" + imgFile.getOriginalFilename());
+        IOUtils.copy(imgFile.getInputStream(),fos);
+        fos.close();
     }
 
     @PutMapping("/{id}")
