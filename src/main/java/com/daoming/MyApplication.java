@@ -1,12 +1,12 @@
-package com.daoming.tvseries;
+package com.daoming;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class TvseriesApplication {
+public class MyApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TvseriesApplication.class, args);
+		SpringApplication.run(MyApplication.class, args);
 	}
 }
