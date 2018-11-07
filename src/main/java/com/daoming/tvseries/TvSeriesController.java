@@ -86,6 +86,7 @@ public class TvSeriesController {
         return IOUtils.toByteArray(inputStream);
     }
 
+    //curl -H "Content-Type:application/json" -X PUT --data '{"name":"西部世界","seasonCount":1,"originalRelease":"2016-10-2"}' http://127.0.0.1:8080/tvseries/101
     @PutMapping("/{id}")
     public TvSeriesDto updateOne(@PathVariable int id, @RequestBody TvSeriesDto tvSeriesDto) {
         if (log.isDebugEnabled()) {
