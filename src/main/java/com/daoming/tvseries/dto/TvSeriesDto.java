@@ -1,6 +1,4 @@
-package com.daoming.tvseries;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
+package com.daoming.tvseries.dto;
 
 import java.util.Date;
 

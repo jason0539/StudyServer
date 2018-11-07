@@ -1,5 +1,6 @@
-package com.daoming.tvseries;
+package com.daoming.tvseries.controller;
 
+import com.daoming.tvseries.dto.TvSeriesDto;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
