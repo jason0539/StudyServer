@@ -13,10 +13,15 @@
 
 </div>
 <script type="text/babel">
+    var myStyle = {
+        fontSize: 100,
+        color: '#ff0000'
+    };
     ReactDOM.render(
         <div>
-            <h1>Hello Word</h1>
+            <h1 style = {myStyle}>Hello Word</h1>
             <h2>欢迎学习 React</h2>
+            {/*注释...*/}
             <p data-myattribute = "somevalue">这是一个很不错的 JavaScript 库!</p>
             <table width="100%" border="1" cellSpacing="1" cellPadding="0">
                 <tr>
