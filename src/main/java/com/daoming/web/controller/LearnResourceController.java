@@ -86,7 +86,7 @@ public class LearnResourceController {
         String password = request.getParameter("password");
 
         if (log.isDebugEnabled()) {
-            log.debug("userName:" + userName + ",password:" + password + request.getParameterNames());
+            log.debug("userName:" + userName + ",password:" + password);
         }
 
         if (userName != null && !userName.isEmpty() && password != null && !password.isEmpty()) {
