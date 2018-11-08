@@ -13,11 +13,11 @@ import java.util.List;
  * https://github.com/tengj/SpringBootDemo/blob/master/chapter4/src/main/java/com/dudu/controller/LearnResourceController.java
  */
 @Controller
-@RequestMapping("/learn")
+@RequestMapping("/")
 public class LearnResourceController {
 
     ////http://localhost:8080/learn/
-    @RequestMapping("")
+    @RequestMapping("learn")
     public ModelAndView allBlogs() {
         List<LearnResource> learnList = new ArrayList<LearnResource>();
         LearnResource bean = new LearnResource("官方参考文档", "Spring Boot Reference Guide", "http://docs.spring.io/spring-boot/docs/1.5.1.RELEASE/reference/htmlsingle/#getting-started-first-application");
@@ -46,7 +46,7 @@ public class LearnResourceController {
     }
 
     //http://localhost:8080/learn/react
-    @RequestMapping("react")
+    @RequestMapping("/learn/react")
     public ModelAndView officialBlog() {
         List<LearnResource> learnList = new ArrayList<LearnResource>();
         LearnResource bean = new LearnResource("官方参考文档", "Spring Boot Reference Guide", "http://docs.spring.io/spring-boot/docs/1.5.1.RELEASE/reference/htmlsingle/#getting-started-first-application");
