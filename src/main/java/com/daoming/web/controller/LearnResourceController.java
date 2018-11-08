@@ -45,13 +45,13 @@ public class LearnResourceController {
         return modelAndView;
     }
 
-    //http://localhost:8080/learn/official
-    @RequestMapping("official")
+    //http://localhost:8080/learn/react
+    @RequestMapping("react")
     public ModelAndView officialBlog() {
         List<LearnResource> learnList = new ArrayList<LearnResource>();
         LearnResource bean = new LearnResource("官方参考文档", "Spring Boot Reference Guide", "http://docs.spring.io/spring-boot/docs/1.5.1.RELEASE/reference/htmlsingle/#getting-started-first-application");
         learnList.add(bean);
-        ModelAndView modelAndView = new ModelAndView("/indexPage");
+        ModelAndView modelAndView = new ModelAndView("/indexPageByReact");
         modelAndView.addObject("learnList", learnList);
         return modelAndView;
     }

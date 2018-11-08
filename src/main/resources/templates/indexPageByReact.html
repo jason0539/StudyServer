@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>learn Resources</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+<body>
+
+<div id="blog" style="text-align: center;margin:0 auto;width: 1000px; ">
+
+</div>
+<script type="text/babel">
+    ReactDOM.render(
+        <div>
+            <h1>Hello Word</h1>
+            <h2>欢迎学习 React</h2>
+            <p data-myattribute = "somevalue">这是一个很不错的 JavaScript 库!</p>
+            <table width="100%" border="1" cellSpacing="1" cellPadding="0">
+                <tr>
+                    <td>作者</td>
+                    <td>教程名称</td>
+                    <td>地址</td>
+                </tr>
+                <!--/*@thymesVar id="learnList" type=""*/-->
+                <tr th:each="learn : ${learnList}">
+                    <td th:text="${learn.author}">嘟嘟MD</td>
+                    <td th:text="${learn.title}">SPringBoot干货系列</td>
+                    <td><a th:href="${learn.url}" target="_blank">点我</a></td>
+                </tr>
+            </table>
+        </div>
+        ,
+        document.getElementById('blog')
+    );
+</script>
+</body>
+</html>
