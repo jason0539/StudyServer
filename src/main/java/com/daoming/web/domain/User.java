@@ -1,4 +1,4 @@
-package com.daoming.web.bean;
+package com.daoming.web.domain;
 
 public class User {
     private String userName;
