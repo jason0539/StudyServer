@@ -15,12 +15,12 @@ import java.util.List;
  * https://github.com/tengj/SpringBootDemo/blob/master/chapter4/src/main/java/com/dudu/controller/LearnResourceController.java
  */
 @Controller
-@RequestMapping("/")
+@RequestMapping("/learn")
 public class LearnController {
     private static final Log log = LogFactory.getLog(LearnController.class);
 
     ////http://localhost:8080/learn/
-    @RequestMapping("learn")
+    @RequestMapping()
     public ModelAndView allBlogs() {
         List<LearnResource> learnList = new ArrayList<LearnResource>();
         ModelAndView modelAndView = new ModelAndView("/indexPage");
@@ -29,7 +29,7 @@ public class LearnController {
     }
 
     //http://localhost:8080/learn/react
-    @RequestMapping("/learn/react")
+    @RequestMapping("/react")
     public ModelAndView officialBlog() {
         List<LearnResource> learnList = new ArrayList<LearnResource>();
         ModelAndView modelAndView = new ModelAndView("/indexPageByReact");
