@@ -21,7 +21,7 @@ public class MyInterceptor implements HandlerInterceptor {
         User user = (User) request.getSession().getAttribute("user");
         if (null == user) {
             LogUtils.d("拦截");
-            response.sendRedirect("login");
+            response.sendRedirect("http://localhost:8080/login");
             flag = false;
         } else {
             LogUtils.d("不拦截");
