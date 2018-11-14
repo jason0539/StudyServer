@@ -1,14 +1,24 @@
 package com.daoming.web.domain;
 
 public class LearnResource {
+    private Long id;
     private String author;
     private String title;
     private String url;
 
-    public LearnResource(String author, String title, String url) {
+    public LearnResource(Long id, String author, String title, String url) {
+        this.id = id;
         this.author = author;
         this.title = title;
         this.url = url;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getAuthor() {
