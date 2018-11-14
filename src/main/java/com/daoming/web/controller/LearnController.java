@@ -1,23 +1,14 @@
 package com.daoming.web.controller;
 
-import com.daoming.tvseries.controller.TvSeriesController;
 import com.daoming.web.domain.LearnResource;
-import com.daoming.web.dto.User;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
-import org.thymeleaf.util.TextUtils;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 
 /**
@@ -25,8 +16,8 @@ import java.util.Map;
  */
 @Controller
 @RequestMapping("/")
-public class LearnResourceController {
-    private static final Log log = LogFactory.getLog(LearnResourceController.class);
+public class LearnController {
+    private static final Log log = LogFactory.getLog(LearnController.class);
 
     ////http://localhost:8080/learn/
     @RequestMapping("learn")

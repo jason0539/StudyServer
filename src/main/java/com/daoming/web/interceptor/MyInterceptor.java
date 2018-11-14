@@ -1,7 +1,6 @@
 package com.daoming.web.interceptor;
 
 import com.daoming.utils.LogUtils;
-import com.daoming.web.controller.LearnResourceController;
 import com.daoming.web.dto.User;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
