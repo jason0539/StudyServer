@@ -3,6 +3,7 @@ package com.daoming.web.service;
 import com.daoming.web.domain.LearnResource;
 import com.daoming.web.tools.Page;
 
+import java.util.List;
 import java.util.Map;
 
 public interface LearnService {
@@ -15,4 +16,6 @@ public interface LearnService {
     LearnResource queryLearnResouceById(Long learnResouce);
 
     Page queryLearnResouceList(Map<String, Object> params);
+
+    List<LearnResource> queryLearnResouceListByMybatis(Map<String, Object> params);
 }

@@ -52,8 +52,7 @@ public class LearnController {
         Map<String, Object> params = new HashMap<String, Object>();
         params.put("page", 1);
         params.put("rows", 100);
-        Page pageObj = learnService.queryLearnResouceList(params);
-        List<Map<String, Object>> learnList = pageObj.getResultList();
+        List<LearnResource> learnList = learnService.queryLearnResouceListByMybatis(params);
         ModelAndView modelAndView = new ModelAndView("/indexPageByReact");
         modelAndView.addObject("learnList", learnList);
         return modelAndView;
