@@ -22,7 +22,7 @@ public class JpaLearnResourceTests {
 
     @Test
     public void test() throws Exception{
-        learnDaoUseJpa.save(new LearnResourceUseJpa(110l, "jason", "title"+System.currentTimeMillis(), "http://www.baidu.com"+System.currentTimeMillis()));
+        learnDaoUseJpa.save(new LearnResourceUseJpa(110l, "jason", "title"+System.currentTimeMillis(), "http://www.baidu.com"+System.currentTimeMillis(),"temp"));
         List<LearnResourceUseJpa> jason = learnDaoUseJpa.findByAuthor("jason");
         for (LearnResourceUseJpa learnResourceUseJpa : jason) {
             LogUtils.d("find the resource is " + learnResourceUseJpa.getAuthor() + ",id = " + learnResourceUseJpa.getId());

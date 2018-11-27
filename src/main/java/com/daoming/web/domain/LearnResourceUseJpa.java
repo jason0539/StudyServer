@@ -2,10 +2,7 @@ package com.daoming.web.domain;
 
 import com.daoming.web.dao.LearnDaoUseJpa;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
@@ -23,15 +20,19 @@ public class LearnResourceUseJpa implements Serializable {
     @Column(nullable = false, unique = false)
     private String url;
 
+    @Transient
+    private String temp;
+
     public LearnResourceUseJpa(){
 
     }
 
-    public LearnResourceUseJpa(Long id, String author, String title, String url) {
+    public LearnResourceUseJpa(Long id, String author, String title, String url,String temp) {
         this.id = id;
         this.author = author;
         this.title = title;
         this.url = url;
+        this.temp = temp;
     }
 
     public Long getId() {
@@ -64,5 +65,13 @@ public class LearnResourceUseJpa implements Serializable {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public String getTemp() {
+        return temp;
+    }
+
+    public void setTemp(String temp) {
+        this.temp = temp;
     }
 }
