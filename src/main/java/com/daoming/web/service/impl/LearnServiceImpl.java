@@ -8,6 +8,7 @@ import com.daoming.web.service.LearnService;
 import com.daoming.web.tools.Page;
 import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -48,8 +49,9 @@ public class LearnServiceImpl implements LearnService {
     }
 
     @Override
+    @Cacheable(value = "learnResource", key = "#params.get('page')+'_'+#params.get('rows')")
     public List<LearnResource> queryLearnResouceListByMybatis(Map<String, Object> params) {
-        LogUtils.d("mapper");
+        LogUtils.d("进入实现类获取，通过mapper实现");
         PageHelper.startPage(Integer.parseInt(params.get("page").toString()), Integer.parseInt(params.get("rows").toString()));
         return this.learnMapper.queryLearnResourceList(params);
     }
