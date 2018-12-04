@@ -1,6 +1,8 @@
 package com.daoming.web.domain;
 
-public class LearnResource {
+import java.io.Serializable;
+
+public class LearnResource implements Serializable {
     private Long id;
     private String author;
     private String title;
@@ -45,4 +47,13 @@ public class LearnResource {
         this.url = url;
     }
 
+    @Override
+    public String toString() {
+        return "LearnResource{" +
+                "id=" + id +
+                ", author='" + author + '\'' +
+                ", title='" + title + '\'' +
+                ", url='" + url + '\'' +
+                '}';
+    }
 }

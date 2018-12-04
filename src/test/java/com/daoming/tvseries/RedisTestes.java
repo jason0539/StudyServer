@@ -1,11 +1,13 @@
 package com.daoming.tvseries;
 
 import com.daoming.utils.LogUtils;
+import com.daoming.web.domain.LearnResource;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -14,12 +16,28 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 public class RedisTestes {
 
     @Autowired
-    private StringRedisTemplate stringRedisTemplate;
+    RedisTemplate redisTemplate;
 
     @Test
     public void test() throws Exception {
-        stringRedisTemplate.opsForValue().set("aaa", "111");
-        LogUtils.d(stringRedisTemplate.opsForValue().get("aaa"));
-//        Assert.assertEquals("111", stringRedisTemplate.opsForValue().get("aaa"));
+        String stringKey = "a";
+        String stringValue = "String Value is " + System.currentTimeMillis();
+        redisTemplate.opsForValue().set(stringKey, stringValue);
+        LogUtils.d("redis中获取string值为：" + redisTemplate.opsForValue().get(stringKey));
+        Assert.assertEquals(stringValue, redisTemplate.opsForValue().get(stringKey));
+
+
+        String objectKey = "b";
+        long objectId = System.currentTimeMillis();
+        LearnResource objectValue = new LearnResource(objectId, "11", "11", "11");
+        redisTemplate.opsForValue().set(objectKey, objectValue);
+
+        LearnResource learnResource = (LearnResource) redisTemplate.opsForValue().get(objectKey);
+        if (learnResource != null) {
+            LogUtils.d("从redis拿到的learnResource:" + learnResource.toString());
+            Assert.assertEquals(objectId, learnResource.getId().longValue());
+        } else {
+            LogUtils.d("从redis拿到的learnResource空的");
+        }
     }
 }
