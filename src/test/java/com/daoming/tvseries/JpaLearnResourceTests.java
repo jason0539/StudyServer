@@ -41,5 +41,10 @@ public class JpaLearnResourceTests {
                 LogUtils.d("findAll " + learnResourceUseJpa.getId());
             }
         });
+
+        learnDaoUseJpa.deleteByAuthor("jason");
+
+        List<LearnResourceUseJpa> all = learnDaoUseJpa.findAll();
+        LogUtils.d("after delete size is " + all.size());
     }
 }
