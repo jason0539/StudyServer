@@ -8,10 +8,15 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
+import java.util.function.Consumer;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
@@ -27,5 +32,14 @@ public class JpaLearnResourceTests {
         for (LearnResourceUseJpa learnResourceUseJpa : jason) {
             LogUtils.d("find the resource is " + learnResourceUseJpa.getAuthor() + ",id = " + learnResourceUseJpa.getId());
         }
+
+        Pageable pageable = new PageRequest(0, 100, new Sort(Sort.Direction.DESC,"id"));
+        Page<LearnResourceUseJpa> page = learnDaoUseJpa.findAll(pageable);
+        page.iterator().forEachRemaining(new Consumer<LearnResourceUseJpa>() {
+            @Override
+            public void accept(LearnResourceUseJpa learnResourceUseJpa) {
+                LogUtils.d("findAll " + learnResourceUseJpa.getId());
+            }
+        });
     }
 }
