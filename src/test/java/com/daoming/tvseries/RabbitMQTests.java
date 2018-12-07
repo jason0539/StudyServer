@@ -19,8 +19,10 @@ public class RabbitMQTests {
 
     @Test
     public void hello() throws Exception {
-        String context = "hello " + new Date();
-        LogUtils.d("Sender : " + context);
-        helloSender.send(context);
+        for (int i = 0; i < 100; i++) {
+            String context = "hello " + i;
+            LogUtils.d("Sender : " + context);
+            helloSender.send(context);
+        }
     }
 }
