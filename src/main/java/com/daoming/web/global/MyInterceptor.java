@@ -1,7 +1,7 @@
-package com.daoming.web.interceptor;
+package com.daoming.web.global;
 
 import com.daoming.utils.LogUtils;
-import com.daoming.web.domain.User;
+import com.daoming.web.login.domain.User;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.web.servlet.HandlerInterceptor;

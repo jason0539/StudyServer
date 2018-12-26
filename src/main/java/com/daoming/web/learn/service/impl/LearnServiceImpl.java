@@ -1,10 +1,10 @@
-package com.daoming.web.service.impl;
+package com.daoming.web.learn.service.impl;
 
 import com.daoming.utils.LogUtils;
-import com.daoming.web.dao.LearnDao;
-import com.daoming.web.dao.LearnMapper;
-import com.daoming.web.domain.LearnResource;
-import com.daoming.web.service.LearnService;
+import com.daoming.web.learn.dao.LearnDao;
+import com.daoming.web.learn.dao.LearnMapper;
+import com.daoming.web.learn.domain.LearnResource;
+import com.daoming.web.learn.service.LearnService;
 import com.daoming.web.tools.Page;
 import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;

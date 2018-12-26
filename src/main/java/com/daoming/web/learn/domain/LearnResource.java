@@ -1,4 +1,4 @@
-package com.daoming.web.domain;
+package com.daoming.web.learn.domain;
 
 import java.io.Serializable;
 

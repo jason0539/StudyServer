@@ -1,8 +1,8 @@
-package com.daoming.web.controller;
+package com.daoming.web.learn.controller;
 
 import com.alibaba.fastjson.JSONObject;
-import com.daoming.web.domain.LearnResource;
-import com.daoming.web.service.LearnService;
+import com.daoming.web.learn.domain.LearnResource;
+import com.daoming.web.learn.service.LearnService;
 import com.daoming.web.tools.Page;
 import com.daoming.web.tools.ServletUtil;
 import org.apache.commons.logging.Log;
@@ -16,7 +16,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;

@@ -1,6 +1,6 @@
-package com.daoming.web.dao;
+package com.daoming.web.learn.dao;
 
-import com.daoming.web.domain.LearnResource;
+import com.daoming.web.learn.domain.LearnResource;
 import com.mysql.jdbc.StringUtils;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Component;

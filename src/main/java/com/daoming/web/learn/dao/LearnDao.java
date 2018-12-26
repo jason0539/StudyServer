@@ -1,6 +1,6 @@
-package com.daoming.web.dao;
+package com.daoming.web.learn.dao;
 
-import com.daoming.web.domain.LearnResource;
+import com.daoming.web.learn.domain.LearnResource;
 import com.daoming.web.tools.Page;
 
 import java.util.Map;

@@ -1,4 +1,4 @@
-package com.daoming.web.domain;
+package com.daoming.web.login.domain;
 
 public class User {
     private String userName;

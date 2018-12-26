@@ -1,12 +1,11 @@
-package com.daoming.web.dao;
+package com.daoming.web.learn.dao;
 
-import com.daoming.web.domain.LearnResourceUseJpa;
+import com.daoming.web.learn.domain.LearnResourceUseJpa;
 import org.apache.ibatis.annotations.Delete;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
-import org.springframework.data.jpa.repository.Query;
 
 import javax.transaction.Transactional;
 import java.util.List;

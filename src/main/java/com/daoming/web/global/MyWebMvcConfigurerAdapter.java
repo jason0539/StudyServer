@@ -1,6 +1,5 @@
-package com.daoming.web.controller;
+package com.daoming.web.global;
 
-import com.daoming.web.interceptor.MyInterceptor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;

@@ -1,6 +1,6 @@
-package com.daoming.web.controller;
+package com.daoming.web.login.controller;
 
-import com.daoming.web.domain.User;
+import com.daoming.web.login.domain.User;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Controller;

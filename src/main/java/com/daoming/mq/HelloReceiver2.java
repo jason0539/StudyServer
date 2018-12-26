@@ -1,7 +1,7 @@
 package com.daoming.mq;
 
 import com.daoming.utils.LogUtils;
-import com.daoming.web.domain.LearnResource;
+import com.daoming.web.learn.domain.LearnResource;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;

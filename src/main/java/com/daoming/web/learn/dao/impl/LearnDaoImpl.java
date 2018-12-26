@@ -1,7 +1,7 @@
-package com.daoming.web.dao.impl;
+package com.daoming.web.learn.dao.impl;
 
-import com.daoming.web.dao.LearnDao;
-import com.daoming.web.domain.LearnResource;
+import com.daoming.web.learn.dao.LearnDao;
+import com.daoming.web.learn.domain.LearnResource;
 import com.daoming.web.tools.Page;
 import com.mysql.jdbc.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;

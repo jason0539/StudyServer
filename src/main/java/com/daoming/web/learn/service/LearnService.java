@@ -1,6 +1,6 @@
-package com.daoming.web.service;
+package com.daoming.web.learn.service;
 
-import com.daoming.web.domain.LearnResource;
+import com.daoming.web.learn.domain.LearnResource;
 import com.daoming.web.tools.Page;
 
 import java.util.List;

@@ -1,6 +1,4 @@
-package com.daoming.web.domain;
-
-import com.daoming.web.dao.LearnDaoUseJpa;
+package com.daoming.web.learn.domain;
 
 import javax.persistence.*;
 import java.io.Serializable;
