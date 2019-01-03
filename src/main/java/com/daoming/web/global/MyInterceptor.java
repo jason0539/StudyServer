@@ -1,7 +1,7 @@
 package com.daoming.web.global;
 
 import com.daoming.utils.LogUtils;
-import com.daoming.web.login.domain.User;
+import com.daoming.web.login.entity.UserInfo;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -17,7 +17,7 @@ public class MyInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         LogUtils.d("拦截处理:" + request.getRequestURL());
         boolean flag = true;
-        User user = (User) request.getSession().getAttribute("user");
+        UserInfo user = (UserInfo) request.getSession().getAttribute("user");
         if (null == user) {
             LogUtils.d("拦截");
             response.sendRedirect("http://localhost:8080/login");
