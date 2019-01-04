@@ -13,6 +13,8 @@ import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.util.ByteSource;
+import org.thymeleaf.util.StringUtils;
+import org.thymeleaf.util.TextUtils;
 
 import javax.annotation.Resource;
 
@@ -48,10 +50,11 @@ public class MyShiroRealm extends AuthorizingRealm {
         if (userInfo == null) {
             return null;
         }
+        String credentialsSalt = userInfo.getCredentialsSalt();
         SimpleAuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(
                 userInfo, //用户名
                 userInfo.getPassword(), //密码
-                ByteSource.Util.bytes(userInfo.getCredentialsSalt()),//salt=username+salt
+                StringUtils.isEmpty(credentialsSalt)?null:ByteSource.Util.bytes(credentialsSalt),//salt=username+salt
                 getName()  //realm name
         );
         return authenticationInfo;
