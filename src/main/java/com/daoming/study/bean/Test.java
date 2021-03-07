@@ -4,6 +4,8 @@ import java.util.UUID;
 import java.util.function.Supplier;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Component;
 
 /**
  * @Author daoming.lzh
@@ -11,6 +13,12 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  * https://blog.csdn.net/qq_41907991/article/details/103589868
  */
 public class Test {
+
+    @Component
+    public class TestBeanFromComponent{
+
+    }
+
     public static void main(String[] args) {
         AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext();
         //supplier方式实例化bean
@@ -24,8 +32,20 @@ public class Test {
         TestBeanFromSupplier testBeanFromSupplier = (TestBeanFromSupplier)ac.getBean("testBeanFromSupplier");
         System.out.println("testBeanFromSupplier.name:" + testBeanFromSupplier.getName());
 
-        ////注解方式实力bean
+        //xml配置方式实例化bean
+        ClassPathXmlApplicationContext xmlApplicationContext = new ClassPathXmlApplicationContext(
+            "applicationContext.xml");
+        TestBeanFromXml testBeanFromXml = (TestBeanFromXml)xmlApplicationContext.getBean("testBeanFromXml");
+        System.out.println("testBeanFromXml.name" + testBeanFromXml.getName());
+
+        //bean注解实例化bean
+        AnnotationConfigApplicationContext acBean = new AnnotationConfigApplicationContext(BeanConfig.class);
+        TestBeanFromBean testBeanFromBean = (TestBeanFromBean)acBean.getBean("testBeanFromConfig");
+        System.out.println("testBeanFromBean.name" + testBeanFromBean.getName());
+
+        //注解方式实力bean
         //TestBeanFromAnnotation testBeanFromAnnotation = (TestBeanFromAnnotation)ac.getBean("testBeanFromAnnotation");
         //System.out.println("testBeanFromAnnotation.name" + testBeanFromAnnotation.getName());
     }
 }
+
